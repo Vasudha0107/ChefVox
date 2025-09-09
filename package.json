@@ -1,0 +1,34 @@
+{
+  "name": "voice-cooking-assistant",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node -r dotenv/config backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run build --prefix frontend",
+    "data:import": "node backend/seeder.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@vitejs/plugin-react": "^4.5.0",
+    "axios": "^1.11.0",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^16.5.0",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^8.0.3",
+    "node-fetch": "^3.3.2",
+    "openai": "^4.20.1",
+    "papaparse": "^5.5.3",
+    "vite": "^6.3.5"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
+  }
+}
